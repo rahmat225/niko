@@ -85,7 +85,7 @@ conn.on('message-new', async(m) =>
 
 if (text.includes("+buatgrup"))
    {
-var nama = text.split("!buatgrup")[1].split("-nomor")[0];
+var nama = text.split("+buatgrup")[1].split("-nomor")[0];
 var nom = text.split("-nomor")[1];
 var numArray = nom.split(",");
 for ( var i = 0; i < numArray.length; i++ ) {
@@ -202,7 +202,7 @@ axios.get(`https://st4rz.herokuapp.com/api/yta?url=${teks}`).then((res) => {
 }
 
 if (text.includes("+yt")){
-const teks = text.replace(/!yt /, "")
+const teks = text.replace(/+yt /, "")
 axios.get(`https://st4rz.herokuapp.com/api/ytv?url=${teks}`).then((res) => {
     let hasil = `Video telah tersedia pada link di bawah, silahkan klik link dan download hasilnya\nðŸ‘‡ðŸ‘‡ðŸ‘‡ðŸ‘‡ðŸ‘‡ðŸ‘‡ðŸ‘‡ðŸ‘‡ðŸ‘‡\n\nJudul: ${res.data.title}\n\nUkuran video: ${res.data.filesize}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
