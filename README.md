@@ -1,4 +1,4 @@
-## KNTNBOTWA
+## NIKO BOT WA
 BOT WHATSAPP YANG BISA DIGUNAKAN DI TERMUX
 
 
@@ -32,7 +32,7 @@ BOT WHATSAPP YANG BISA DIGUNAKAN DI TERMUX
 |       ✅       |    PANTUN                         |
 |       ✅       | ANIMEPICT                         |
 |       ✅       | STICKER                           |
-|       ✅       | NULIS                             |
+|       ✖️       | NULIS                             |
 |       ✅       | QUOTES                            |
 |       ✅       | RANDOM PICT                       |
 |       ✅       | ANIMEPICT                         |
