@@ -633,7 +633,41 @@ if (text.includes("+alay")){
 		conn.sendMessage(id, hasil, MessageType.text)
 	})
 }
-
+if (text.includes("+coronaworld")){
+const teks = text.replace(/+coronaworld /, "")
+axios.get(`https://api.terhambar.com/negara/{teks}`).then((res) => {
+    let hasil = `Negara : ${negara}\nTotal : ${total}\nKasus Baru : ${kasus_baru}\nMeninggoy : ${meninggal}\nBaru Meninggoy : ${meninggal_baru}\nSembuh : &`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+if (text.includes("+ninja")){
+const teks = text.replace(/+ninja/, "")
+axios.get(`https://api.terhambar.com/ninja?nama=${teks}`).then((res) => {
+    let hasil = `${result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+if (text.includes("+alkitabharian")){
+const teks = text.replace(/+alkitabharian/, "")
+axios.get(`https://docs-jojo.herokuapp.com/api/alkitab`).then((res) => {
+    let hasil = `Ayat : ${ayat}\nIsi : ${isi}\nGambar : ${img}\n\n HALELUYA TUHAN YESUS MEMBERKATI KITA SEMUA`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+if (text.includes("+alkitab")){
+const teks = text.replace(/+alkitab/, "")
+axios.get(`https://docs-jojo.herokuapp.com/api/alkitabsearch?q=${teks}`).then((res) => {
+    let hasil = `Ayat : ${ayat}\nIsi : ${isi}\nLink : ${link}\n\n HALELUYA TUHAN YESUS MEMBERKATI KITA SEMUA`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+if (text.includes("+infonom")){
+const teks = text.replace(/+infonom/, "")
+axios.get(`https://docs-jojo.herokuapp.com/api/infonomor?no=${teks}`).then((res) => {
+    let hasil = `Internasional : ${international}\nNomor : ${nomor}\nOperator : ${op}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
 
 
 
