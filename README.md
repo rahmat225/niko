@@ -24,6 +24,14 @@ BOT WHATSAPP YANG BISA DIGUNAKAN DI TERMUX
 > node index.js
 ```
 
+## SETTING
+* Nama bot
+* Instagram
+* Kapan Bot aktif
+* Apikey mhankbarbar
+* Apikey vhtear
+* Kontak whatsapp owner
+
 
 # FITUR
 
@@ -32,7 +40,7 @@ BOT WHATSAPP YANG BISA DIGUNAKAN DI TERMUX
 |       ✅       |    PANTUN                         |
 |       ✅       | ANIMEPICT                         |
 |       ✅       | STICKER                           |
-|       ✖️       | NULIS                             |
+|       ✅       | NULIS                             |
 |       ✅       | QUOTES                            |
 |       ✅       | RANDOM PICT                       |
 |       ✅       | ANIMEPICT                         |
@@ -52,6 +60,13 @@ ket : ✅ : aktif
 
 ## THANKS TO
 * [`termux-whatsapp-bot`](https://github.com/fdciabdul/termux-whatsapp-bot)
+* [`Fdciabdul`](https://github.com/fdciabdul)
+* [`Aruga`](https://github.com/ArugaZ)
+* [`Mhankbarbar`](https://github.com/MhankBarBar)
+* [`Alfiansx`](https://github.com/alfiansx)
+* [`Bintang73`](https://github.com/Bintang73)
+* [`Adiwajshing`](https://github.com/adiwajshing/Baileys)
+* [`Mrfzvx12`](https://github.com/mrfzvx12/termux-whatsapp-bot)
 
 ## DONASI
 * Gopay : 085811955968
