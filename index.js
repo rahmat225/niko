@@ -15,8 +15,6 @@ const info = require("./lib/info.js");
 /////////////////
 const BotName = 'NIKO BOT'; 
 const instagram = 'https://instagram.com/rhmteffal'; 
-const apivhtear = 'API_KEY';
-const apibarbar = 'API_KEY';
 const telegram = 'https://t.me/lusiapanjir'; 
 const kapanbotaktif = '09.00-21.00'; 
 const youtube = 'https://www.youtube.com/channel/UCp1xSiOXRjWubhr_EaxlK-Q';
@@ -634,108 +632,7 @@ axios.get(`https://api.terhambar.com/negara/{teks}`).then((res) => {
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
-if (text.includes("+alkitabharian")){
-const teks = text.replace(/+alkitabharian/, "")
-axios.get(`https://docs-jojo.herokuapp.com/api/alkitab`).then((res) => {
-    let hasil = `Ayat : ${ayat}\nIsi : ${isi}\nGambar : ${img}\n\n HALELUYA TUHAN YESUS MEMBERKATI KITA SEMUA`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
-if (text.includes("+alkitab")){
-const teks = text.replace(/+alkitab/, "")
-axios.get(`https://docs-jojo.herokuapp.com/api/alkitabsearch?q=${teks}`).then((res) => {
-    let hasil = `Ayat : ${ayat}\nIsi : ${isi}\nLink : ${link}\n\n HALELUYA TUHAN YESUS MEMBERKATI KITA SEMUA`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
-if (text.includes("+infonom")){
-const teks = text.replace(/+infonom/, "")
-axios.get(`https://docs-jojo.herokuapp.com/api/infonomor?no=${teks}`).then((res) => {
-    let hasil = `Internasional : ${international}\nNomor : ${nomor}\nOperator : ${op}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
-if (text.includes("+igstalk")){
-const sons = text.replace(/+igstalk /, "")
-axios.get(`https://alfians-api.herokuapp.com/api/stalk?username=${sons}`).then ((res) =>{
-    imageToBase64(res.data.Profile_pic)
-        .then(
-    (ress) => {
-    var buf = Buffer.from(ress, 'base64')
-    conn.sendMessage(id, '[ WAIT ] Stalking⏳ silahkan tunggu', MessageType.text, { quoted: m } )
-    let hasil = `*>Username* : ${res.data.Username}\n*>Nama* : ${res.data.Name}\n*>Follower* : ${res.data.Jumlah_Followers}\n*>Following* : ${res.data.Jumlah_Following}\n*>Jumlah Post* : ${res.data.Jumlah_Post}\n*>Bio* : ${res.data.Biodata}\n\nFollow : https://www.instagram.com/mrf.zvx/`;
-    conn.sendMessage(id, buf ,MessageType.image, { caption: hasil, quoted: m } );
-    })
-})
-}
-if (text.includes("+tglnas")){
-const teks = text.replace(/+tglnas /, "")
-axios.get(`https://api.haipbis.xyz/harinasional?tanggal=${teks}`).then((res) => {
-    let hasil = `*Tanggal* : ${res.data.tanggal}\n*Keterangan* : ${res.data.keterangan}`;
-    conn.sendMessage(id, hasil ,MessageType.text, { quoted: m } );
-})
-}
-else if (text == '+ngaji'){
-axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
-    const sr = /{(.*?)}/gi;
-    const hs = res.data.acak.id.ayat;
-    const ket = `${hs}`.replace(sr, '');
-    let hasil = `[${ket}]   ${res.data.acak.ar.teks}\n\n${res.data.acak.id.teks}(QS.${res.data.surat.nama}, Ayat ${ket})`;
-    conn.sendMessage(id, hasil ,MessageType.text, { quoted: m } );
-})
-}
-if (text.includes('+logopornhub')){
-var porn = text.split("+logopornhub ")[1];
-    var text1 = porn.split("|")[0];
-    var text2 = porn.split("|")[1];
-    axios.get(`https://mhankbarbars.herokuapp.com/api/textpro?theme=pornhub&text1=${text1}&text2=${text2}`).then((res) => {
-      imageToBase64(res.data.result)
-        .then(
-          (ress) => {
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, '[ WAIT ] Sedang diproses⏳ silahkan tunggu sebentar', MessageType.text, { quoted: m })
-            conn.sendMessage(id, buf, MessageType.image, { quoted: m });
-        })
-    })
-}
-if (text.includes("+namae")){
-const teks = text.replace(/+namae /, "")
-axios.get(`https://api.terhambar.com/ninja?nama=${teks}`).then((res) => {
-	conn.sendMessage(id, '[ WAIT ] Menggubah namamu⏳ silahkan tunggu', MessageType.text, { quoted: m } )
-    let hasil = `Nama Ninja kamu:\n\n*${res.data.result.ninja}*`;
-    conn.sendMessage(id, hasil ,MessageType.text, { quoted: m } );
-})
-}
-if (text.includes("+alay")){
-	const alay = text.split("+alay")[1]
-	axios.get(`https://api.terhambar.com/bpk?kata=${alay}`).then ((res) =>
-		{ let hasil = `${res.data.text}`
-		conn.sendMessage(id, hasil, MessageType.text, { quoted: m } )
-	})
-}
-if (text.includes('.+nulis')){
-  const teks = text.replace(/+nulis /, '')
-    axios.get(`https://st4rz.herokuapp.com/api/nulis?text=${teks}`)
-    .then((res) => {
-      imageToBase64(res.data.result)
-        .then(
-          (ress) => {
-            conn.sendMessage(id, '[ WAIT ] Menulis ⏳ silahkan tunggu', MessageType.text, { quoted: m } )
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf ,MessageType.image, { quoted: m } )
-        })
-    })
-}
-else if (text == '+opengc'){
-let hasil = `${id.split("@s.whatsapp.net")[0]}`;
-   conn.groupSettingChange (hasil, GroupSettingChange.messageSend, false);
-conn.sendMessage(id, 'Hai' ,MessageType.text);
-}
-else if (text == '+closegc'){
- let hasil = `${id.split("@s.whatsapp.net")[0]}`;
-   conn.groupSettingChange (hasil, GroupSettingChange.messageSend, true);
-conn.sendMessage(id, 'Done, Tutup dulu yah' ,MessageType.text);
-}
+
 
 
 
